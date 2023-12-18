@@ -20,7 +20,7 @@ class Home extends BaseController
             $data['desc'] = 'Warung Padang Upik cabang Surabaya akan segera dibuka pada 22 Desember 2023.';
             $data['galleries'] = $files;
             $data['guest'] = $guest;
-            return view('home', $data);
+            return view('undangan', $data);
         } else {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }

@@ -1543,19 +1543,19 @@ select.uk-form-width-xsmall {
 
 .uk-button-secondary {
     background-color: #FFCD05;
-    color: #fff;
+    color: #E92629;
     border: 1px solid transparent
 }
 
 .uk-button-secondary:hover {
     background-color: #d3a903;
-    color: #fff
+    color: #E92629
 }
 
 .uk-button-secondary.uk-active,
 .uk-button-secondary:active {
     background-color: #bd9804;
-    color: #fff
+    color: #E92629
 }
 
 .uk-button-danger {
@@ -12239,6 +12239,30 @@ body {
     margin-bottom: 70px;
 }
 
+.gk-header {
+    background-image: url(../img/bg1.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gk-content {
+    margin-top: 100px;
+}
+
+.gk-kepada {
+    margin-bottom: 70px;
+}
+
+.content-width {
+    width: 80vw;
+}
+
+.separator {
+    border-top: 2px solid #fff;
+    width: 80%;
+}
+
 @media (min-width:640px) {
     .tm-header {
         background-size: 20%, 20%, 50%, cover;
@@ -12249,6 +12273,21 @@ body {
     .tm-kepada {
         margin-bottom: 50px;
     }
+    .gk-header {
+        background-size: cover;
+    }
+    .gk-content {
+        margin-top: 0;
+    }
+    .gk-kepada {
+        margin-bottom: 50px;
+    }
+    .content-width {
+        width: 50vw;
+    }
+    .separator {
+        width: 50%;
+    }
 }
 
 @media (min-width:960px) {
@@ -12256,6 +12295,12 @@ body {
         background-size: 10%, 10%, 30%, cover;
     }
     .tm-content {
+        margin-top: 200px;
+    }
+    .gk-header {
+        background-size: cover;
+    }
+    .gk-content {
         margin-top: 200px;
     }
 }
