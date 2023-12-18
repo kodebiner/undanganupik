@@ -16,8 +16,8 @@ class Home extends BaseController
             $gallerydir = 'images/gallery';
             $files = glob($gallerydir . "/*");
             $data = $this->data;
-            $data['title'] = 'Wedding of Dinda & Lilo';
-            $data['desc'] = 'Dinda & Lillo akan segera menikah pada 11 November 2023.';
+            $data['title'] = 'Pembukaan Warung Padang Upik Surabaya';
+            $data['desc'] = 'Warung Padang Upik cabang Surabaya akan segera dibuka pada 22 Desember 2023.';
             $data['galleries'] = $files;
             $data['guest'] = $guest;
             return view('home', $data);
