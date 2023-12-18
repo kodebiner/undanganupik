@@ -128,11 +128,3 @@ nb-configuration.xml
 /.phpunit.*.cache
 
 /.php-cs-fixer.php
-
-public/img/*
-public/img/profile/*
-public/img/product/*
-public/img/promo/*
-public/img/tfproof/*
-public/img/presence/*
-public/img/logo.*
