@@ -1525,36 +1525,36 @@ select.uk-form-width-xsmall {
 }
 
 .uk-button-primary {
-    background-color: #1e87f0;
+    background-color: #E92629;
     color: #fff;
     border: 1px solid transparent
 }
 
 .uk-button-primary:hover {
-    background-color: #0f7ae5;
+    background-color: #cf1316;
     color: #fff
 }
 
 .uk-button-primary.uk-active,
 .uk-button-primary:active {
-    background-color: #0e6dcd;
+    background-color: #b80e11;
     color: #fff
 }
 
 .uk-button-secondary {
-    background-color: #222;
+    background-color: #FFCD05;
     color: #fff;
     border: 1px solid transparent
 }
 
 .uk-button-secondary:hover {
-    background-color: #151515;
+    background-color: #d3a903;
     color: #fff
 }
 
 .uk-button-secondary.uk-active,
 .uk-button-secondary:active {
-    background-color: #080808;
+    background-color: #bd9804;
     color: #fff
 }
 

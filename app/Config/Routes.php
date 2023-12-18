@@ -31,6 +31,13 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('guestlist', function($routes) {
+    $routes->get('', 'Home::guestlist');
+    $routes->post('send', 'Home::send');
+    $routes->post('new', 'Home::addguest');
+    $routes->post('edit', 'Home::editguest');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -37,17 +37,6 @@
         <main role="main">
             <!-- Cover Section -->
             <section class="tm-header uk-width-1-1 uk-inline" uk-height-viewport="offset-top: true">
-                <!-- <div class="uk-position-center uk-margin tm-content">
-                    <div class=" uk-margin-large">
-                        <div class="uk-text-center uk-h1 uk-text-bold uk-text-uppercase uk-margin-remove" style="color:#FFCD05;">Undangan</div>
-                        <div class="uk-text-center uk-h4 uk-text-bold uk-margin-remove" style="color:#FFCD05;">Pembukaan Warung Padang Upik cabang Surabaya</div>
-                    </div>                    
-                    <div class=" uk-margin-large">
-                        <div class="uk-h5 uk-text-center uk-margin-remove" style="color:#FFCD05;">22 Desember 2023</div>
-                        <div class="uk-h6 uk-text-center uk-margin-remove" style="color:#FFCD05;">09.00 - selesai</div>
-                        <div class="uk-h6 uk-text-center uk-margin-remove" style="color:#FFCD05;">JL. Kapuas no. 24/ Jl. Darmo no. 92 Kota Surabaya (Sebelah RS. Darmo)</div>
-                    </div>
-                </div> -->
                 <div class="uk-position-bottom-center tm-kepada">
                     <div class="uk-text-center uk-margin-large">
                         <div class="uk-h4 uk-margin-remove" style="font-style: italic; color:#FFF;">Kepada :</div>
