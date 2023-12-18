@@ -2,7 +2,8 @@
 <html dir="ltr "lang="id" vocab="http://schema.org/">
     <head>
         <meta charset="utf-8">
-        <title>Undangan Pembukaan Warung Padang Upik</title>
+		<title><?= $title; ?></title>
+		<meta name="description" content="<?= $desc; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <base href="<?=base_url();?>">
         <meta name="author" content="PT. Kodebiner Teknologi Indonesia">
@@ -24,13 +25,19 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+		<meta property="og:url" content="<?=$uri?>" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="<?= $title; ?>" />
+		<meta property="og:description" content="<?= $desc; ?>" />
+		<meta property="og:locale" content="id_ID" />
+		<meta property="og:image" content="<?=base_url()?>img/fb-share.jpg" />
+		<meta property="og:image:secure_url" content="<?=base_url()?>img/fb-share.jpg" />
+		<meta property="og:image:alt" content="Dinda & Lillo" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="700px" />
+		<meta property="og:image:height" content="470px" />
         <script src="js/uikit.min.js"></script>
         <script src="js/uikit-icons.min.js"></script>
-
-        <!-- Extra Script Section -->
-        <?= $this->renderSection('extraScript') ?>
-        <!-- Extra Script Section end -->
-
     </head>
     <body>
         <!-- Main Section -->
@@ -40,7 +47,7 @@
                 <div class="uk-position-bottom-center tm-kepada">
                     <div class="uk-text-center uk-margin-large">
                         <div class="uk-h4 uk-margin-remove" style="font-style: italic; color:#FFF;">Kepada :</div>
-                        <div class="uk-h3 uk-margin-remove" style="font-style: italic; font-weight: 700; color:#FFF;">Bapak Kosmas Mahendra</div>
+                        <div class="uk-h3 uk-margin-remove" style="font-style: italic; font-weight: 700; color:#FFF;"><?=$guest['name']?></div>
                     </div>
                 </div>
             </section>
@@ -109,6 +116,10 @@
             </section>
             <!-- Location Section End -->
         </main>
+        <footer class="uk-section uk-section-small uk-section-primary" style="background-image:url(img/bg1.svg); background-size:cover;">
+            <div class="uk-text-center">Developed by</div>
+            <div class="uk-text-center"><a class="uk-link-reset" href="https://binary111.com" target="_blank">PT Kodebiner Teknologi Indonesia</a></div>
+        </footer>
         <!-- Main Section end -->
     </body>
 </html>

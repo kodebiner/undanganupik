@@ -8,7 +8,22 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('home');
+        $GuestModel = new GuestModel();
+        $input = $this->request->getGet('invitationid');
+
+        if (isset($input)) {
+            $guest = $GuestModel->where('tamu_id', $input)->first();
+            $gallerydir = 'images/gallery';
+            $files = glob($gallerydir . "/*");
+            $data = $this->data;
+            $data['title'] = 'Wedding of Dinda & Lilo';
+            $data['desc'] = 'Dinda & Lillo akan segera menikah pada 11 November 2023.';
+            $data['galleries'] = $files;
+            $data['guest'] = $guest;
+            return view('home', $data);
+        } else {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
     }
 
     public function guestlist()
