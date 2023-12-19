@@ -79,11 +79,11 @@
                         </div>
                     </div>
                     <div class="uk-flex uk-flex-center uk-margin">
-                        <div class="uk-width-1-2@m uk-flex-middle uk-flex-center uk-grid-small" uk-grid>
+                        <div class="uk-width-1-2@m uk-flex-middle uk-grid-small" uk-grid>
                             <div class="uk-width-1-6 uk-text-center">
                                 <img class="uk-width-1-2" src="img/time.svg" />
                             </div>
-                            <div class="uk-width-5-6 uk-h4" style="color: #FFCD05;">
+                            <div class="uk-width-5-6 uk-h6 uk-h5@m" style="color: #FFCD05;">
                                 <div class="">Jumat, 22 Desember 2023</div>
                                 <div class="">Pk. 09.00 - 11.30 WIB</div>
                             </div>
@@ -94,8 +94,8 @@
                             <div class="uk-width-1-6 uk-text-center">
                                 <img class="uk-width-1-2" src="img/pin.svg" />
                             </div>
-                            <div class="uk-wdith-5-6 uk-h4" style="color: #FFCD05;">
-                                <div>Jl  Raya Darmo No.92 / jl. Raya Kapuas no.24</div>
+                            <div class="uk-wdith-5-6 uk-h6 uk-h5@m" style="color: #FFCD05;">
+                                <div style="width:100%; word-wrap: break-word;">Jl  Raya Darmo No.92 / jl. Raya Kapuas no.24</div>
                                 <div>Kota Surabaya (Selatan RS. Darmo)</div>
                             </div>
                         </div>
