@@ -70,6 +70,7 @@ class Home extends BaseController
             'name'          => $input['name'],
             'tamu_id'       => time(),
             'status'        => '0',
+            'sesi'          => $input['sesi'],
         ];
         if (!empty($input['phone'])) {
             $rules = [
@@ -102,6 +103,7 @@ class Home extends BaseController
             'id'            => $input['id'],
             'name'          => $input['name'],
             'status'        => '0',
+            'sesi'          => $input['sesi'],
         ];
         if (!empty($input['phone'])) {
             $rules = [

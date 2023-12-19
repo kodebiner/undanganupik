@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class GuestModel extends Model
 {
     protected $allowedFields = [
-        'name', 'country_code', 'phone', 'tamu_id', 'status'
+        'name', 'country_code', 'phone', 'tamu_id', 'sesi', 'status'
     ];
 
     protected $table      = 'tamu_undangan';
