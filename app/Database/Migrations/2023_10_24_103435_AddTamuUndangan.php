@@ -4,45 +4,23 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddTamuUndangan extends Migration
+class AddInvitationSession extends Migration
 {
     public function up()
     {
-        $this->forge->addField([
-            'id' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
-                'auto_increment' => true,
+        $fields = [
+            'sesi'  => [
+                'type'          => 'INT',
+                'constraint'    => 11,
+                'after'         => 'tamu_id',
+                'null'          => true,
             ],
-            'name' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'country_code' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'phone' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'tamu_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'status' => [
-                'type' => 'INT',
-                'constraint' => 11,
-            ],
-        ]);
-        $this->forge->addKey('id', true);
-        $this->forge->addUniqueKey('tamu_id');
-        $this->forge->createTable('tamu_undangan');
+        ];
+        $this->forge->addColumn('tamu_undangan', $fields);
     }
 
     public function down()
     {
-        $this->forge->dropTable('tamu_undangan');
+        $this->forge->dropColumn('tamu_undangan', 'sesi');
     }
 }

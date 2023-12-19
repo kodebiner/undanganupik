@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('main') ?>
-<div class="uk-container uk-container-small">
+<div class="uk-container">
     <?= view('Views/Auth/_message_block') ?>
     <div class="uk-h3 uk-text-uppercase uk-text-bold" style="color: #E92629;">Daftar Tamu Undangan</div>
     <div class="uk-text-right">
@@ -15,10 +15,11 @@
         <table class="uk-table uk-table-divider uk-table-middle uk-table-small uk-table-hover uk-table-responsive">
             <thead>
                 <tr>
-                    <th>Nama</th>
-                    <th>No. HP</th>
-                    <th>Status</th>
-                    <th></th>
+                    <th class="uk-text-center">Nama</th>
+                    <th class="uk-text-center">No. HP</th>
+                    <th class="uk-text-center">Sesi</th>
+                    <th class="uk-text-center">Status</th>
+                    <th class="uk-text-center"></th>
                 </tr>
             </thead>
             <tbody>
@@ -36,25 +37,40 @@
                             <?php
                             if (!empty($guest['phone'])) {
                                 echo '+'.$guest['country_code'].$guest['phone'];
+                            } else {
+                                echo '<span class="uk-text-meta">Belum ada No. HP</span>';
+                            }
+                            ?>
+                        </td>
+                        <td class="uk-width-medium uk-text-center">
+                            <?php
+                            if ($guest['sesi'] === '1') {
+                                echo '09.00-11.30';
+                            } elseif ($guest['sesi'] === '2') {
+                                echo '12.30-15.00';
+                            } else {
+                                echo '<span class="uk-text-meta">Belum ada sesi</span>';
                             }
                             ?>
                         </td>
                         <?php if ($guest['status'] === '0') { ?>
-                            <td id="status<?= $guest['id'] ?>" class="uk-width-small uk-text-center" style="background-color:#cf2317; color: #fff;">Belum Dikirim</td>
+                            <td id="status<?= $guest['id'] ?>" class="uk-width-medium uk-text-center" style="background-color:#cf2317; color: #fff;">Belum Dikirim</td>
                         <?php } else { ?>
-                            <td id="status<?= $guest['id'] ?>" class="uk-width-small uk-text-center" style="background-color:#1dcf17; color: #000;">Sudah Dikirim</td>
+                            <td id="status<?= $guest['id'] ?>" class="uk-width-medium uk-text-center" style="background-color:#1dcf17; color: #000;">Sudah Dikirim</td>
                         <?php } ?>
                         <td class="uk-width-medium">
                             <div class="uk-child-width-auto uk-flex-center" uk-grid>
                                 <div>
                                     <a href="#guest-<?= $guest['id'] ?>" uk-icon="file-edit" uk-toggle></a>
                                 </div>
-                                <div>
-                                    <a id="copy<?= $guest['id'] ?>" uk-icon="link"></a>
-                                </div>
-                                <div id="whatsapp<?= $guest['id'] ?>">
-                                    <a id="send<?= $guest['id'] ?>" target="_blank" uk-icon="whatsapp"></a>
-                                </div>
+                                <?php if ($guest['sesi'] === '1' || $guest['sesi'] === '2') { ?>
+                                    <div>
+                                        <a id="copy<?= $guest['id'] ?>" uk-icon="link"></a>
+                                    </div>
+                                    <div id="whatsapp<?= $guest['id'] ?>">
+                                        <a id="send<?= $guest['id'] ?>" target="_blank" uk-icon="whatsapp"></a>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </td>
                     </tr>
@@ -125,6 +141,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="phone">Sesi</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select uk-form-width-medium" id="sesi" name="sesi" required>
+                            <option value="" selected disabled>Pilih sesi</option>
+                            <option value="1" >Sesi 1 - 09.00-11.30</option>
+                            <option value="2" >Sesi 2 - 12.30-15.00</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="uk-modal-footer uk-text-center">
                 <button class="uk-button uk-button-primary" type="submit">Simpan</button>
@@ -173,6 +199,28 @@
                                 </div>
                             </div>
                             <div class="uk-margin-small uk-text-meta">Nomor yang terdaftar adalah +<?=$guest['country_code'].$guest['phone']?></div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="phone">Sesi</label>
+                        <div class="uk-form-controls">
+                            <?php
+                            if ($guest['sesi'] === '1') {
+                                $select1 = 'selected';
+                                $select2 = '';
+                            } elseif ($guest['sesi'] === '2') {
+                                $select1 = '';
+                                $select2 = 'selected';
+                            } else {
+                                $select1 = '';
+                                $select2 = '';
+                            }
+                            ?>
+                            <select class="uk-select uk-form-width-medium" id="sesi" name="sesi" required>
+                                <option value="" selected disabled>Pilih sesi</option>
+                                <option value="1" <?=$select1?>>Sesi 1 - 09.00-11.30</option>
+                                <option value="2" <?=$select2?>>Sesi 2 - 12.30-15.00</option>
+                            </select>
                         </div>
                     </div>
                     <input id="id" name="id" value="<?=$guest['id']?>" hidden />

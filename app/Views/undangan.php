@@ -85,7 +85,15 @@
                             </div>
                             <div class="uk-width-5-6 uk-h6 uk-h5@m" style="color: #FFCD05;">
                                 <div class="">Jumat, 22 Desember 2023</div>
-                                <div class="">Pk. 09.00 - 11.30 WIB</div>
+                                <div class="">
+                                    <?php
+                                    if ($guest['sesi'] === '1') {
+                                        echo '09.00 - 11.30 WIB';
+                                    } elseif ($guest['sesi'] === '2') {
+                                        echo '12.30 - 15.00 WIB';
+                                    }
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
