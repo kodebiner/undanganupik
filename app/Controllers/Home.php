@@ -85,7 +85,7 @@ class Home extends BaseController
                 return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
             }
             $data['country_code'] = $input['country-code'];
-            $data['phone'] = $input['cphone'];
+            $data['phone'] = $input['phone'];
         }
         $GuestModel->save($data);
 
