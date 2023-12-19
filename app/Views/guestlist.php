@@ -15,11 +15,11 @@
         <table class="uk-table uk-table-divider uk-table-middle uk-table-small uk-table-hover uk-table-responsive">
             <thead>
                 <tr>
-                    <th class="uk-text-center">Nama</th>
-                    <th class="uk-text-center">No. HP</th>
+                    <th>Nama</th>
+                    <th>No. HP</th>
                     <th class="uk-text-center">Sesi</th>
                     <th class="uk-text-center">Status</th>
-                    <th class="uk-text-center"></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
                             }
                             ?>
                         </td>
-                        <td class="uk-width-medium uk-text-center">
+                        <td class="uk-width-small uk-text-center">
                             <?php
                             if ($guest['sesi'] === '1') {
                                 echo '09.00-11.30';
@@ -54,9 +54,9 @@
                             ?>
                         </td>
                         <?php if ($guest['status'] === '0') { ?>
-                            <td id="status<?= $guest['id'] ?>" class="uk-width-medium uk-text-center" style="background-color:#cf2317; color: #fff;">Belum Dikirim</td>
+                            <td id="status<?= $guest['id'] ?>" class="uk-width-small uk-text-center" style="background-color:#cf2317; color: #fff;">Belum Dikirim</td>
                         <?php } else { ?>
-                            <td id="status<?= $guest['id'] ?>" class="uk-width-medium uk-text-center" style="background-color:#1dcf17; color: #000;">Sudah Dikirim</td>
+                            <td id="status<?= $guest['id'] ?>" class="uk-width-small uk-text-center" style="background-color:#1dcf17; color: #000;">Sudah Dikirim</td>
                         <?php } ?>
                         <td class="uk-width-medium">
                             <div class="uk-child-width-auto uk-flex-center" uk-grid>
