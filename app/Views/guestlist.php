@@ -32,26 +32,32 @@
                     ?>
                     <tr>
                         <td class="uk-width-medium"><?= $guest['name'] ?></td>
-                        <td class="uk-table-shrink">+<?= $guest['country_code'].$guest['phone'] ?></td>
+                        <td class="uk-table-shrink">
+                            <?php
+                            if (!empty($guest['phone'])) {
+                                echo '+'.$guest['country_code'].$guest['phone'];
+                            }
+                            ?>
+                        </td>
                         <?php if ($guest['status'] === '0') { ?>
                             <td id="status<?= $guest['id'] ?>" class="uk-width-small uk-text-center" style="background-color:#cf2317; color: #fff;">Belum Dikirim</td>
                         <?php } else { ?>
                             <td id="status<?= $guest['id'] ?>" class="uk-width-small uk-text-center" style="background-color:#1dcf17; color: #000;">Sudah Dikirim</td>
                         <?php } ?>
-                        <td class="uk-width-small">
+                        <td class="uk-width-medium">
                             <div class="uk-child-width-auto uk-flex-center" uk-grid>
                                 <div>
                                     <a href="#guest-<?= $guest['id'] ?>" uk-icon="file-edit" uk-toggle></a>
                                 </div>
-                                <?php //if ($guest['status'] === '0') { ?>
+                                <div>
+                                    <a id="copy<?= $guest['id'] ?>" uk-icon="link"></a>
+                                </div>
                                 <div id="whatsapp<?= $guest['id'] ?>">
                                     <a id="send<?= $guest['id'] ?>" target="_blank" uk-icon="whatsapp"></a>
                                 </div>
-                                <?php //} ?>
                             </div>
                         </td>
                     </tr>
-                    <?php if ($guest['status'] === '0') { ?>
                     <script>
                         document.getElementById('send<?= $guest['id'] ?>').addEventListener('click', function() {
                             $.ajax({
@@ -69,8 +75,11 @@
                                 }
                             });                            
                         });
+                        document.getElementById('copy<?= $guest['id'] ?>').addEventListener('click', function() {
+                            navigator.clipboard.writeText("https://upiksurabaya.binary111.com/?invitationid=<?=$guest['tamu_id']?>");
+                            UIkit.modal.alert('Link berhasil dicopy.');
+                        });
                     </script>
-                    <?php } ?>
                 <?php } ?>
             </tbody>
         </table>
