@@ -61,32 +61,64 @@ class Home extends BaseController
     }
 
     public function addguest() {
+        $validation = \Config\Services::validation();
+
         $GuestModel = new GuestModel();
 
         $input = $this->request->getPost();
         $data = [
             'name'          => $input['name'],
-            'country_code'  => $input['country-code'],
-            'phone'         => $input['phone'],
             'tamu_id'       => time(),
             'status'        => '0',
         ];
+        if (!empty($input['phone'])) {
+            $rules = [
+                'country-code' => [
+                    'label'     => 'Kode Negara',
+                    'rules'     => 'required',
+                    'errors'    => [
+                        'required'      => '{field} wajib dipilih.'
+                    ],
+                ],
+            ];
+            if (!$this->validate($rules)) {
+                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            }
+            $data['country_code'] = $input['country-code'];
+            $data['phone'] = $input['cphone'];
+        }
         $GuestModel->save($data);
 
         return redirect()->back()->with('message', 'Undangan berhasil ditambahkan.');
     }
 
     public function editguest() {
+        $validation = \Config\Services::validation();
+
         $GuestModel = new GuestModel();
 
         $input = $this->request->getPost();
         $data = [
             'id'            => $input['id'],
             'name'          => $input['name'],
-            'country_code'  => $input['country-code'],
-            'phone'         => $input['phone'],
             'status'        => '0',
         ];
+        if (!empty($input['phone'])) {
+            $rules = [
+                'country-code' => [
+                    'label'     => 'Kode Negara',
+                    'rules'     => 'required',
+                    'errors'    => [
+                        'required'      => '{field} wajib dipilih.'
+                    ],
+                ],
+            ];
+            if (!$this->validate($rules)) {
+                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            }
+            $data['country_code'] = $input['country-code'];
+            $data['phone'] = $input['cphone'];
+        }
         $GuestModel->save($data);
 
         return redirect()->back()->with('message', 'Undangan berhasil dirubah.');

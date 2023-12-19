@@ -95,8 +95,8 @@
                                 <img class="uk-width-1-2" src="img/pin.svg" />
                             </div>
                             <div class="uk-wdith-5-6 uk-h4" style="color: #FFCD05;">
-                                <div class="">Jl. Kapuas no. 24/ Jl. Darmo no. 92</div>
-                                <div class="">Kota Surabaya (Selatan RS. Darmo)</div>
+                                <div>Jl  Raya Darmo No.92 / jl. Raya Kapuas no.24</div>
+                                <div>Kota Surabaya (Selatan RS. Darmo)</div>
                             </div>
                         </div>
                     </div>

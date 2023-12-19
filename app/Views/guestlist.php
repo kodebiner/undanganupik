@@ -95,7 +95,7 @@
                     <label class="uk-form-label" for="phone">No. HP</label>
                     <div class="uk-form-controls" uk-grid>
                         <div class="uk-width-1-3">
-                            <select class="uk-select" id="country-code" name="country-code" required>
+                            <select class="uk-select" id="country-code" name="country-code">
                             <?php                                
                             foreach ($countries as $country) {
                                 if (!empty($country['idd']['root'])) {
@@ -112,7 +112,7 @@
                             </select>
                         </div>
                         <div class="uk-width-2-3">
-                            <input class="uk-input" type="number" id="phone" name="phone" required />
+                            <input class="uk-input" type="number" id="phone" name="phone" />
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         <div class="uk-form-controls">
                             <div uk-grid>
                                 <div class="uk-width-1-3">
-                                    <select class="uk-select" id="country-code" name="country-code" required>
+                                    <select class="uk-select" id="country-code" name="country-code">
                                     <?php                                
                                     foreach ($countries as $country) {
                                         if (!empty($country['idd']['root'])) {
@@ -160,7 +160,7 @@
                                     </select>
                                 </div>
                                 <div class="uk-width-2-3">
-                                    <input class="uk-input" type="number" id="phone" name="phone" required />
+                                    <input class="uk-input" type="number" id="phone" name="phone" />
                                 </div>
                             </div>
                             <div class="uk-margin-small uk-text-meta">Nomor yang terdaftar adalah +<?=$guest['country_code'].$guest['phone']?></div>
